@@ -1,11 +1,12 @@
+CREATE DATABASE proyecto_modulo2;
+
 CREATE TABLE proyecto_modulo2.movies (
     id INT PRIMARY KEY,
     budget BIGINT,
     genres TEXT,
-    keywords TEXT,
+    homepage VARCHAR(255),
     original_language VARCHAR(10),
     original_title VARCHAR(255),
-    overview TEXT,
     popularity DECIMAL(10,4),
     production_companies TEXT,
     production_countries TEXT,
@@ -14,7 +15,6 @@ CREATE TABLE proyecto_modulo2.movies (
     runtime FLOAT,
     spoken_languages TEXT,
     status VARCHAR(50),
-    tagline TEXT,
     title VARCHAR(255),
     vote_average DECIMAL(3,1),
     vote_count INT

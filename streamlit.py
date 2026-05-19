@@ -139,6 +139,7 @@ def cargar_datos():
     return pd.read_pickle("dataset_analitico_limpio.pkl")
 
 df = cargar_datos()
+df["release_decade"] = df["release_decade"].astype(int)
 
 
 # ── Sidebar ───────────────────────────────────────────────────────────────────

@@ -116,7 +116,7 @@ Abre `proyectoModulo2.ipynb` en Jupyter y ejecuta las celdas en orden. Las fases
 
 ### 5. Lanzar el dashboard
 ```bash
-streamlit run app.py
+streamlit run streamlit.py
 ```
 
 ---

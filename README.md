@@ -38,7 +38,7 @@ Flujo end-to-end de datos: extracción desde Kaggle, modelado relacional en TiDB
 ├── tmdb_5000_credits.csv       # Dataset original (descargar desde Kaggle)
 ├── dataset_analitico.pkl       # Dataset tras el JOIN SQL (generado en Fase 5)
 ├── dataset_analitico_limpio.pkl # Dataset tras limpieza (generado en Fase 6)
-└── app.py                      # Aplicación Streamlit (Fase 8)
+└── streamlit.py                      # Aplicación Streamlit (Fase 8)
 ```
 
 ---

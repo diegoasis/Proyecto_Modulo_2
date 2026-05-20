@@ -259,8 +259,12 @@ st.plotly_chart(fig2, use_container_width=True)
 section_header("Directores", "Directores con mayor recaudación", "Recaudación media · Top 10",
                color=GREEN, color_rgba="rgba(29,158,117,0.12)", border_rgba="rgba(29,158,117,0.3)")
 
+numero_directores = (df_f["director"].value_counts())
+directores_varias_peliculas = (numero_directores[numero_directores >= 5].index)
+df_directores = df_f[df_f["director"].isin(directores_varias_peliculas)]
+
 revenue_director = (
-    df_f.groupby("director")["revenue"]
+    df_directores.groupby("director")["revenue"]
     .mean()
     .sort_values(ascending=False)
     .head(10)
@@ -359,7 +363,7 @@ st.markdown(f"""
   <p style="font-family:'Space Mono',monospace;font-size:10px;color:{GREEN};letter-spacing:0.12em;text-transform:uppercase;margin:0 0 16px;">Conclusiones</p>
   <p style="font-size:15px;color:{TEXT_MID};margin:0 0 10px;line-height:1.7;">→ &nbsp;Los documentales y películas musicales son los géneros con mayor ROI mediano, lo que indica que suelen ser los más rentables en relación con su presupuesto.</p>
   <p style="font-size:15px;color:{TEXT_MID};margin:0 0 10px;line-height:1.7;">→ &nbsp;El presupuesto medio de las películas ha aumentado claramente con el paso de las décadas, especialmente a partir de los años 80 y 90.</p>
-  <p style="font-size:15px;color:{TEXT_MID};margin:0 0 10px;line-height:1.7;">→ &nbsp;Chris Buck destaca como uno de los directores con mayor éxito en términos de recaudación media por película.</p>
+  <p style="font-size:15px;color:{TEXT_MID};margin:0 0 10px;line-height:1.7;">→ &nbsp;James Cameron destaca como el director con mayor éxito en términos de recaudación media por película.</p>
   <p style="font-size:15px;color:{TEXT_MID};margin:0 0 10px;line-height:1.7;">→ &nbsp;Las películas estrenadas en junio, mayo y noviembre son las que tienen, de media, una mayor recaudación en taquilla; seguidas de julio y diciembre.</p>
   <p style="font-size:15px;color:{TEXT_MID};margin:0 0 10px;line-height:1.7;">→ &nbsp;Existe una relación positiva entre el número de votos y la recaudación de las películas. En general, las películas con más votos tienden a tener mayores ingresos, aunque la relación no es perfectamente lineal y existen algunas excepciones.</p>
   <p style="font-size:15px;color:{TEXT_MID};margin:0;line-height:1.7;">→ &nbsp;Se observa una ligera tendencia a que las películas más largas tengan mejores puntuaciones. Aun así, la relación no es muy fuerte.</p>
